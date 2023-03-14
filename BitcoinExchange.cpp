@@ -146,9 +146,9 @@ void Btc::readInput(std::string inputPath)
 			std::cout << "Error: bad input => " << vectorLine[0] << std::endl;
 			continue;
 		}
-		std::map<std::string, float>::iterator it = this->data.lower_bound(trim(vectorLine[0]));
+		std::map<std::string, float>::iterator it = this->data.upper_bound(trim(vectorLine[0]));
 		if (it != this->data.end()) {
-	        std::pair<std::string, float> p = *it;
+	        std::pair<std::string, float> p = *(--it);
 			try
 			{
 				if (std::stod(vectorLine[1]) > 1000)
