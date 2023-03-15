@@ -13,7 +13,7 @@ all: csv $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 csv:
-	curl -O https://projects.intra.42.fr/uploads/document/document/14968/cpp_09.tgz
+	curl -O https://projects.intra.42.fr/uploads/document/document/15126/cpp_09.tgz
 	tar xvf cpp_09.tgz
 	rm -rf cpp_09.tgz
 	mv cpp_09/data.csv ./
@@ -31,4 +31,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re csv create
+.PHONY: all clean fclean re csv
