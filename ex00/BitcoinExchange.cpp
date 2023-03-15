@@ -127,19 +127,6 @@ void Btc::readInput(std::string inputPath)
 			i = 1;
 			continue;
 		}
-		// size_t pos = line.find('|');
-		// if (pos == std::string::npos)
-		// 	continue;
-		// std::string date = line.substr(0, pos);
-        // float value;
-        // try {
-        //     value = std::stod(line.substr(pos + 1));
-        // } catch (std::exception &a) {
-		// 	(void)a;
-		// 	std::cerr << "Error : Wrong Data" << std::endl;
-		// 	this->readFlag = -1;
-		// 	return;
-        // }
 		vectorLine = this->splitString(line, '|');
 		if (vectorLine[1].length() == 0 || vectorLine.size() < 2)
 		{
@@ -168,7 +155,7 @@ void Btc::readInput(std::string inputPath)
 				std::cout << "Error : Input Not A Number" << std::endl;
 				continue;
 			}
-    	}
+		}
 
 	}
 	file2.close();

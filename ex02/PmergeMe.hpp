@@ -1,14 +1,20 @@
 #pragma once
 
-#include <vector>
 #include <iostream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
+
+
 
 class PmergeMe
 {
-private:
-	std::vector<int> numbers;
-public:
-	PmergeMe();
-	~PmergeMe();
-	std::vector<std::string> splitString(std::string str, char delimiter);
+	public:
+	PmergeMe(int ac, char **av);
+	template <typename T>
+	void display(const T& container);
+	void mergeInsertSortDeque(std::deque<int>& arr);
+	void mergeInsertSortList(std::list<int>& arr);
 };

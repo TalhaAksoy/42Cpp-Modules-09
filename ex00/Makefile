@@ -5,9 +5,9 @@ SRCS =	$(wildcard *.cpp)
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror #-std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: csv $(NAME)
+all: $(NAME)
 
 .cpp.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
@@ -31,4 +31,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re csv
+run : all csv
+
+.PHONY: all clean fclean re csv run

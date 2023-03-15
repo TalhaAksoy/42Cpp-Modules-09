@@ -23,13 +23,6 @@ public:
 
 	void readInput(std::string inputPath);
 
-	class nonNumber:public std::exception{
-		public:
-			const char *what() const throw(){
-				return "Input Not a Number";
-			}
-	};
-
 	std::map<std::string, float> getData();
 	std::vector<std::string> splitString(std::string str, char delimiter);
 };
